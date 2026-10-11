@@ -1,0 +1,6 @@
+{
+  "name": "DEKU Theme Studio",
+  "description": "Minimalist theme crafting studio for Android featuring Obsidian, Paper, and Ember presets with live interface preview and OnePlus OxygenOS integration guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
