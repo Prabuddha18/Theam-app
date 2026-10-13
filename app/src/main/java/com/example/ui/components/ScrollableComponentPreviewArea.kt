@@ -285,10 +285,7 @@ fun ScrollableComponentPreviewArea(
                             colors = ButtonDefaults.outlinedButtonColors(
                                 contentColor = textPrimary
                             ),
-                            border = ButtonDefaults.outlinedButtonBorder.copy(
-                                width = 1.dp,
-                                brush = androidx.compose.ui.graphics.SolidColor(borderColor)
-                            ),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, borderColor),
                             modifier = Modifier
                                 .weight(1f)
                                 .testTag("card_secondary_button")
@@ -421,10 +418,7 @@ fun ScrollableComponentPreviewArea(
                             colors = ButtonDefaults.outlinedButtonColors(
                                 contentColor = textPrimary
                             ),
-                            border = ButtonDefaults.outlinedButtonBorder.copy(
-                                width = 1.dp,
-                                brush = androidx.compose.ui.graphics.SolidColor(borderColor)
-                            ),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, borderColor),
                             modifier = Modifier
                                 .weight(1f)
                                 .testTag("suite_btn_outlined")

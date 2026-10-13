@@ -338,6 +338,72 @@ fun HomeDashboardScreen(
             }
         }
 
+        Spacer(modifier = Modifier.height(14.dp))
+
+        // Install on OnePlus Guide Card
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clip(DekuShapes.medium)
+                .background(MaterialTheme.colorScheme.surface)
+                .border(1.dp, accent.color.copy(alpha = 0.5f), DekuShapes.medium)
+                .clickable { onNavigateTab(StudioTab.SETTINGS) }
+                .padding(14.dp)
+                .testTag("install_on_device_banner")
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Box(
+                            modifier = Modifier
+                                .background(accent.color, CircleShape)
+                                .size(6.dp)
+                        )
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(
+                            text = "READY FOR INSTALLATION",
+                            fontFamily = JetBrainsMono,
+                            fontSize = 9.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = accent.color
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = "Install on OnePlus Nord CE 4 Lite 5G",
+                        fontFamily = SpaceGrotesk,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 13.sp,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Text(
+                        text = "Step-by-step sideloading walkthrough & OxygenOS setup guide.",
+                        fontFamily = SpaceGrotesk,
+                        fontSize = 11.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+
+                Box(
+                    modifier = Modifier
+                        .background(accent.color, DekuShapes.extraSmall)
+                        .padding(horizontal = 10.dp, vertical = 6.dp)
+                ) {
+                    Text(
+                        text = "VIEW GUIDE",
+                        fontFamily = SpaceGrotesk,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 10.sp,
+                        color = Color.White
+                    )
+                }
+            }
+        }
+
         Spacer(modifier = Modifier.height(24.dp))
     }
 }

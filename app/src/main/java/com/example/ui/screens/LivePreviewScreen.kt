@@ -149,9 +149,7 @@ fun LivePreviewScreen(
                         colors = ButtonDefaults.outlinedButtonColors(
                             contentColor = MaterialTheme.colorScheme.onSurface
                         ),
-                        border = ButtonDefaults.outlinedButtonBorder.copy(
-                            width = 1.dp
-                        ),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
                         modifier = Modifier
                             .weight(1f)
                             .testTag("preview_secondary_button")

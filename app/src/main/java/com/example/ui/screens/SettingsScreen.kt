@@ -117,6 +117,84 @@ fun SettingsScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        // Card 3: OnePlus Nord CE 4 Lite Sideloading & Installation Guide
+        SettingsCard(title = "ONEPLUS NORD CE 4 LITE // INSTALLATION & SIDELOADING GUIDE", accentColor = accent.color) {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Text(
+                    text = "Follow these 5 simple steps to install the compiled DEKU APK directly onto your OnePlus Nord CE 4 Lite 5G without needing root privileges:",
+                    fontFamily = SpaceGrotesk,
+                    fontSize = 12.sp,
+                    lineHeight = 16.sp,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+
+                InstallStepItem(
+                    stepNumber = "01",
+                    title = "Download APK File",
+                    description = "In Google AI Studio Build, tap the Project/Export menu at the top-right and select 'Download APK' to save the compiled package (app-debug.apk).",
+                    accentColor = accent.color
+                )
+
+                InstallStepItem(
+                    stepNumber = "02",
+                    title = "Transfer to OnePlus Phone",
+                    description = "If downloaded on PC/Browser, transfer the APK to your OnePlus Nord CE 4 Lite via USB-C cable, Google Drive, or send directly via browser download on the device.",
+                    accentColor = accent.color
+                )
+
+                InstallStepItem(
+                    stepNumber = "03",
+                    title = "Locate in OxygenOS Files",
+                    description = "Open the built-in 'My Files' (or 'Files by Google') app on your OnePlus phone, navigate to 'Downloads', and tap the downloaded DEKU APK file.",
+                    accentColor = accent.color
+                )
+
+                InstallStepItem(
+                    stepNumber = "04",
+                    title = "Allow Unknown Source (OxygenOS)",
+                    description = "When prompted by OxygenOS security dialog ('Your phone is not allowed to install apps from this source'), tap 'Settings' and toggle ON 'Allow apps from this source' for the file manager.",
+                    accentColor = accent.color
+                )
+
+                InstallStepItem(
+                    stepNumber = "05",
+                    title = "Tap Install & Launch",
+                    description = "Press Back and tap 'Install'. Android Package Installer will install DEKU Theme Studio. Tap 'Open' to launch the app natively.",
+                    accentColor = accent.color
+                )
+
+                // OxygenOS tips box
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(DekuShapes.extraSmall)
+                        .background(MaterialTheme.colorScheme.surfaceVariant)
+                        .border(1.dp, MaterialTheme.colorScheme.outlineVariant, DekuShapes.extraSmall)
+                        .padding(10.dp)
+                ) {
+                    Column {
+                        Text(
+                            text = "OXYGENOS 14 PERSONALIZATION TIP",
+                            fontFamily = JetBrainsMono,
+                            fontSize = 9.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = accent.color
+                        )
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = "To match your OnePlus system accent with DEKU: Go to OxygenOS Settings > Wallpapers & style > Colors, and pick the custom burnt red or dark monochrome palette. Long-press your home screen to add DEKU widgets.",
+                            fontFamily = SpaceGrotesk,
+                            fontSize = 11.sp,
+                            lineHeight = 15.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         // Card 3: Permissions & Privacy
         SettingsCard(title = "PERMISSIONS & PRIVACY MANIFESTO", accentColor = accent.color) {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -356,5 +434,58 @@ private fun LegalLinkRow(
             contentDescription = "Navigate to $title",
             tint = accentColor
         )
+    }
+}
+
+@Composable
+private fun InstallStepItem(
+    stepNumber: String,
+    title: String,
+    description: String,
+    accentColor: Color
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(DekuShapes.extraSmall)
+            .background(MaterialTheme.colorScheme.surfaceVariant)
+            .border(1.dp, MaterialTheme.colorScheme.outlineVariant, DekuShapes.extraSmall)
+            .padding(10.dp),
+        horizontalArrangement = Arrangement.spacedBy(10.dp),
+        verticalAlignment = Alignment.Top
+    ) {
+        Box(
+            modifier = Modifier
+                .background(accentColor.copy(alpha = 0.15f), DekuShapes.extraSmall)
+                .border(1.dp, accentColor.copy(alpha = 0.5f), DekuShapes.extraSmall)
+                .padding(horizontal = 6.dp, vertical = 3.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = stepNumber,
+                fontFamily = JetBrainsMono,
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Bold,
+                color = accentColor
+            )
+        }
+
+        Column(modifier = Modifier.weight(1f)) {
+            Text(
+                text = title,
+                fontFamily = SpaceGrotesk,
+                fontWeight = FontWeight.Bold,
+                fontSize = 12.sp,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+            Spacer(modifier = Modifier.height(2.dp))
+            Text(
+                text = description,
+                fontFamily = SpaceGrotesk,
+                fontSize = 11.sp,
+                lineHeight = 15.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
     }
 }
